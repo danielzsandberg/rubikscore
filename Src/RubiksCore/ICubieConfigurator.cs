@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace RubiksCore
 {
-    public interface ICubieConfigurator
+    interface ICubieConfigurator
     {
         IEnumerable<Cubie> CreateCubies(int cubeSize);
     }

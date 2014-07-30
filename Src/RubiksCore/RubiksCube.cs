@@ -192,7 +192,7 @@ namespace RubiksCore
 
         #endregion
 
-        #region Methods\\Shuffle
+        #region Methods \\ Shuffle
 
         public void Shuffle(int numberOfTurns = 100)
         {
@@ -285,6 +285,11 @@ namespace RubiksCore
         #endregion
 
         #region Methods
+
+        public RubiksCube Copy()
+        {
+            return new RubiksCube(_parser, new CubeCopier(this), CubeSize);
+        }
 
         private bool IsFaceSolved(RubiksDirection cubeFace)
         {

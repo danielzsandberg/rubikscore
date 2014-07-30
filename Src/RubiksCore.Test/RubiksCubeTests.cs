@@ -2623,6 +2623,51 @@ namespace RubiksCore.Test
             //verification
             Assert.IsTrue(cube.IsSolved);
         }
+
+        [TestMethod]
+        public void Copy_ThenHashCodeOfNewRubiksCubeIsDifferentFromFirst()
+        {
+            //setup
+            RubiksCube cube = new RubiksCube();
+
+            int originalHashCode = cube.GetHashCode();
+
+            //exercise
+            int newHashCode = cube.Copy().GetHashCode();
+
+            //verification
+            Assert.AreNotEqual<int>(originalHashCode, newHashCode);
+        }
+
+        [TestMethod]
+        public void Copy_ThenCubieSetIsEqualToOriginal()
+        {
+            //setup
+            RubiksCube cube = new RubiksCube();
+
+            HashSet<Cubie> cubies = new HashSet<Cubie>(cube.Cubies);
+
+            //exercise
+            HashSet<Cubie> newCubies = new HashSet<Cubie>(cube.Copy().Cubies);
+
+            //verification
+            Assert.IsTrue(cubies.SetEquals(newCubies));
+        }
+
+        [TestMethod]
+        public void Copy_ThenNewCubieHashcodesAreDifferentFromOriginalOnes()
+        {
+            //setup
+            RubiksCube cube = new RubiksCube();
+
+            HashSet<int> cubieHashCodes = new HashSet<int>(cube.Cubies.Select(cubie => cubie.GetHashCode()));
+
+            //exercise
+            HashSet<int> newCubieHashCodes = new HashSet<int>(cube.Copy().Cubies.Select(cubie => cubie.GetHashCode()));
+
+            //verification
+            Assert.IsTrue(cubieHashCodes.SetEquals(newCubieHashCodes));
+        }
     }
 
     class TestConfigurator : ICubieConfigurator

@@ -1,14 +1,13 @@
 ﻿using System;
 using System.Linq;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Xunit;
 using System.Collections.Generic;
 
 namespace RubiksCore.Test
 {
-    [TestClass]
     public class RubiksCubeTests
     {
-        [TestMethod]
+        [Fact]
         public void TurnFront_WhenTurningDirectionIsThreeoClock_ThenAllCubesOnThatFaceShouldMove()
         {
             //setup
@@ -496,11 +495,11 @@ namespace RubiksCore.Test
             //exercise
             cube.TurnFront(TurningDirection.ThreeoClock);
 
-            Assert.AreEqual<int>(27, cube.Cubies.Count(), "Cubie count is wrong");
-            Assert.IsTrue(expectedCubies.SetEquals(cube.Cubies));
+            Assert.Equal<int>(27, cube.Cubies.Count());
+            Assert.True(expectedCubies.SetEquals(cube.Cubies));
         }
 
-        [TestMethod]
+        [Fact]
         public void TurnRight_WhenTurningDirectionIsThreeoClock_ThenAllCubesOnThatFaceShouldMove()
         {
             //setup
@@ -1011,10 +1010,10 @@ namespace RubiksCore.Test
             cube.TurnRight(TurningDirection.ThreeoClock);
 
             //verification
-            Assert.IsTrue(expectedCubies.SetEquals(cube.Cubies));
+            Assert.True(expectedCubies.SetEquals(cube.Cubies));
         }
 
-        [TestMethod]
+        [Fact]
         public void TurnLeft_WhenLayersDeepIsOne_ThenAllCubesOnThatFaceAndTheOneNextToItShouldMove()
         {
             //setup
@@ -1524,10 +1523,10 @@ namespace RubiksCore.Test
             //exercise
             cube.TurnLeft(TurningDirection.ThreeoClock, 1);
 
-            Assert.IsTrue(expectedCubies.SetEquals(cube.Cubies));
+            Assert.True(expectedCubies.SetEquals(cube.Cubies));
         }
 
-        [TestMethod]
+        [Fact]
         public void TurnUp_WhenTurningDirectionIsSixoClock_ThenAllCubesOnThatFaceShouldMove()
         {
             //setup
@@ -2024,10 +2023,10 @@ namespace RubiksCore.Test
             cube.TurnUp(TurningDirection.SixoClock);
 
             //verification
-            Assert.IsTrue(expectedCubies.SetEquals(cube.Cubies));
+            Assert.True(expectedCubies.SetEquals(cube.Cubies));
         }
 
-        [TestMethod]
+        [Fact]
         public void TurnBack_WhenTurningDirectionIsThreeoClock_ThenAllCubesOnThatFaceShouldMove()
         {
             //setup
@@ -2516,11 +2515,10 @@ namespace RubiksCore.Test
 
             System.Diagnostics.Trace.WriteLine(cube);
 
-            Assert.IsTrue(threeByThreeByThreeCube.SetEquals(cube.Cubies));
+            Assert.True(threeByThreeByThreeCube.SetEquals(cube.Cubies));
         }
 
-        [TestMethod]
-        [ExpectedException(typeof(InvalidOperationException))]
+        [Fact]
         public void CubieIndexer_WhenRequestingANonExistentCubie_ThenInvalidOperationIsThrown()
         {
             //setup
@@ -2528,10 +2526,10 @@ namespace RubiksCore.Test
             RubiksCube cube = new RubiksCube(null, new TestConfigurator(), cubeSize);
 
             //exercise
-            Cubie cubie = cube[4, 4, 4];
+            Assert.Throws<InvalidOperationException>(() => cube[4,4,4]);
         }
 
-        [TestMethod]
+        [Fact]
         public void Shuffle_WhenNumberOfRandomTurnsIs1000_ThenAllCubiesCoordinatesAreValid()
         {
             //setup
@@ -2569,36 +2567,36 @@ namespace RubiksCore.Test
                 }
             }
 
-            Assert.IsTrue(areAllCubiesInRange);
-            Assert.AreEqual<int>(9, colorsOfCube.Count(color => color == RubiksColor.Blue), "Blue colors are incorrect");
-            Assert.AreEqual<int>(9, colorsOfCube.Count(color => color == RubiksColor.Green), "Green colors are incorrect");
-            Assert.AreEqual<int>(9, colorsOfCube.Count(color => color == RubiksColor.Orange), "Orange colors are incorrect");
-            Assert.AreEqual<int>(9, colorsOfCube.Count(color => color == RubiksColor.Red), "Red colors are incorrect");
-            Assert.AreEqual<int>(9, colorsOfCube.Count(color => color == RubiksColor.White), "White colors are incorrect");
-            Assert.AreEqual<int>(9, colorsOfCube.Count(color => color == RubiksColor.Yellow), "Yellow colors are incorrect");
+            Assert.True(areAllCubiesInRange);
+            Assert.Equal<int>(9, colorsOfCube.Count(color => color == RubiksColor.Blue));
+            Assert.Equal<int>(9, colorsOfCube.Count(color => color == RubiksColor.Green));
+            Assert.Equal<int>(9, colorsOfCube.Count(color => color == RubiksColor.Orange));
+            Assert.Equal<int>(9, colorsOfCube.Count(color => color == RubiksColor.Red));
+            Assert.Equal<int>(9, colorsOfCube.Count(color => color == RubiksColor.White));
+            Assert.Equal<int>(9, colorsOfCube.Count(color => color == RubiksColor.Yellow));
         }
 
-        [TestMethod]
+        [Fact]
         public void IsSolved_WhenCubeIsInitialized_ThenTheCubeShouldBeSolved()
         {
             //setup
             RubiksCube cube = new RubiksCube();
 
             //exercise and verification
-            Assert.IsTrue(cube.IsSolved);
+            Assert.True(cube.IsSolved);
         }
 
-        [TestMethod]
+        [Fact]
         public void IsSolved_When4By4By4CubeIsInitialized_ThenTheCubeShouldBeSolved()
         {
             //setup
             RubiksCube cube = new RubiksCube(4);
 
             //exercise and verification
-            Assert.IsTrue(cube.IsSolved);
+            Assert.True(cube.IsSolved);
         }
 
-        [TestMethod]
+        [Fact]
         public void IsSolved_WhenHorizontalTotalMovePerformedOnCube_ThenCubeShouldStillBeSolved()
         {
             //setup
@@ -2608,10 +2606,10 @@ namespace RubiksCore.Test
             cube.TurnUp(TurningDirection.SixoClock, 2);
 
             //verification
-            Assert.IsTrue(cube.IsSolved);
+            Assert.True(cube.IsSolved);
         }
 
-        [TestMethod]
+        [Fact]
         public void IsSolved_WhenVerticalTotalMovePerformedOnCube_ThenCubeShouldStillBeSolved()
         {
             //setup
@@ -2621,10 +2619,10 @@ namespace RubiksCore.Test
             cube.TurnFront(TurningDirection.SixoClock, 2);
 
             //verification
-            Assert.IsTrue(cube.IsSolved);
+            Assert.True(cube.IsSolved);
         }
 
-        [TestMethod]
+        [Fact]
         public void Copy_ThenHashCodeOfNewRubiksCubeIsDifferentFromFirst()
         {
             //setup
@@ -2636,10 +2634,10 @@ namespace RubiksCore.Test
             int newHashCode = cube.Copy().GetHashCode();
 
             //verification
-            Assert.AreNotEqual<int>(originalHashCode, newHashCode);
+            Assert.NotEqual<int>(originalHashCode, newHashCode);
         }
 
-        [TestMethod]
+        [Fact]
         public void Copy_ThenCubieSetIsEqualToOriginal()
         {
             //setup
@@ -2651,10 +2649,10 @@ namespace RubiksCore.Test
             HashSet<Cubie> newCubies = new HashSet<Cubie>(cube.Copy().Cubies);
 
             //verification
-            Assert.IsTrue(cubies.SetEquals(newCubies));
+            Assert.True(cubies.SetEquals(newCubies));
         }
 
-        [TestMethod]
+        [Fact]
         public void Copy_ThenNewCubieHashcodesAreDifferentFromOriginalOnes()
         {
             //setup
@@ -2666,7 +2664,7 @@ namespace RubiksCore.Test
             HashSet<int> newCubieHashCodes = new HashSet<int>(cube.Copy().Cubies.Select(cubie => cubie.GetHashCode()));
 
             //verification
-            Assert.IsTrue(cubieHashCodes.SetEquals(newCubieHashCodes));
+            Assert.True(cubieHashCodes.SetEquals(newCubieHashCodes));
         }
     }
 

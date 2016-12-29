@@ -1,13 +1,12 @@
 ﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Xunit;
 using System.Collections.Generic;
 
 namespace RubiksCore.Test
 {
-    [TestClass]
     public class CubieTests
     {
-        [TestMethod]
+        [Fact]
         public void Move_WhenAxisOfRotationIsYAndDirectionIs3oClock_ThenTheAppropriateFaceAreShifted()
         {
             Cubie cubie = new Cubie
@@ -46,10 +45,10 @@ namespace RubiksCore.Test
                             }
                     );
 
-            Assert.AreEqual<Cubie>(expectedCubie, cubie);
+            Assert.Equal<Cubie>(expectedCubie, cubie);
         }
 
-        [TestMethod]
+        [Fact]
         public void Move_WhenAxisOfRotationIsYAndDirectionIs6oClock_ThenTheAppropriateFaceAreShifted()
         {
             Cubie cubie = new Cubie
@@ -88,10 +87,10 @@ namespace RubiksCore.Test
                             }
                     );
 
-            Assert.AreEqual<Cubie>(expectedCubie, cubie);
+            Assert.Equal<Cubie>(expectedCubie, cubie);
         }
 
-        [TestMethod]
+        [Fact]
         public void Move_WhenAxisOfRotationIsYAndDirectionIs9oClock_ThenTheAppropriateFaceAreShifted()
         {
             Cubie cubie = new Cubie
@@ -130,10 +129,10 @@ namespace RubiksCore.Test
                             }
                     );
 
-            Assert.AreEqual<Cubie>(expectedCubie, cubie);
+            Assert.Equal<Cubie>(expectedCubie, cubie);
         }
 
-        [TestMethod]
+        [Fact]
         public void Move_WhenAxisOfRotationIsXAndDirectionIs3oClock_ThenTheAppropriateFaceAreShifted()
         {
             Cubie cubie = new Cubie
@@ -172,10 +171,10 @@ namespace RubiksCore.Test
                             }
                     );
 
-            Assert.AreEqual<Cubie>(expectedCubie, cubie);
+            Assert.Equal<Cubie>(expectedCubie, cubie);
         }
 
-        [TestMethod]
+        [Fact]
         public void Move_WhenAxisOfRotationIsXAndDirectionIs6oClock_ThenTheAppropriateFaceAreShifted()
         {
             Cubie cubie = new Cubie
@@ -214,10 +213,10 @@ namespace RubiksCore.Test
                             }
                     );
 
-            Assert.AreEqual<Cubie>(expectedCubie, cubie);
+            Assert.Equal<Cubie>(expectedCubie, cubie);
         }
 
-        [TestMethod]
+        [Fact]
         public void Move_WhenAxisOfRotationIsXAndDirectionIs9oClock_ThenTheAppropriateFaceAreShifted()
         {
             Cubie cubie = new Cubie
@@ -256,10 +255,10 @@ namespace RubiksCore.Test
                             }
                     );
 
-            Assert.AreEqual<Cubie>(expectedCubie, cubie);
+            Assert.Equal<Cubie>(expectedCubie, cubie);
         }
 
-        [TestMethod]
+        [Fact]
         public void Move_WhenAxisOfRotationIsZAndDirectionIs3oClock_ThenTheAppropriateFaceAreShifted()
         {
             Cubie cubie = new Cubie
@@ -298,10 +297,10 @@ namespace RubiksCore.Test
                             }
                     );
 
-            Assert.AreEqual<Cubie>(expectedCubie, cubie);
+            Assert.Equal<Cubie>(expectedCubie, cubie);
         }
 
-        [TestMethod]
+        [Fact]
         public void Move_WhenAxisOfRotationIsZAndDirectionIs6oClock_ThenTheAppropriateFaceAreShifted()
         {
             Cubie cubie = new Cubie
@@ -340,10 +339,10 @@ namespace RubiksCore.Test
                             }
                     );
 
-            Assert.AreEqual<Cubie>(expectedCubie, cubie);
+            Assert.Equal<Cubie>(expectedCubie, cubie);
         }
 
-        [TestMethod]
+        [Fact]
         public void Move_WhenAxisOfRotationIsZAndDirectionIs9oClock_ThenTheAppropriateFaceAreShifted()
         {
             Cubie cubie = new Cubie
@@ -382,10 +381,10 @@ namespace RubiksCore.Test
                             }
                     );
 
-            Assert.AreEqual<Cubie>(expectedCubie, cubie);
+            Assert.Equal<Cubie>(expectedCubie, cubie);
         }
 
-        [TestMethod]
+        [Fact]
         public void Equality_WhenThereIsALargeListOfUniqueCubies_ThenTheFinalCountInTheHashSetShouldBe27()
         {
             #region 27 Cube Configuration
@@ -866,7 +865,7 @@ namespace RubiksCore.Test
                 cubie002, cubie102, cubie202, cubie012, cubie112, cubie212, cubie022, cubie122, cubie222
             };
 
-            Assert.AreEqual<int>(27, expectedCubies.Count);
+            Assert.Equal<int>(27, expectedCubies.Count);
         }
     }
 }

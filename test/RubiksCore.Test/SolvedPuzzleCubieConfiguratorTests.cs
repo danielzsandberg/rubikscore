@@ -1,14 +1,13 @@
 ﻿using System;
 using System.Linq;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Xunit;
 using System.Collections.Generic;
 
 namespace RubiksCore.Test
 {
-    [TestClass]
     public class SolvedPuzzleCubieConfiguratorTests
     {
-        [TestMethod]
+        [Fact]
         public void CreateCubies_WhenUsingCustomColorConfiguration_ThenItReturnsCubiesInASolvedState()
         {
             //setup
@@ -503,11 +502,11 @@ namespace RubiksCore.Test
             HashSet<Cubie> cubies = new HashSet<Cubie>(configurator.CreateCubies(3));
 
             //verification
-            Assert.AreEqual<int>(27, cubies.Count());
-            Assert.IsTrue(cubies.SetEquals(expectedCubies));
+            Assert.Equal<int>(27, cubies.Count());
+            Assert.True(cubies.SetEquals(expectedCubies));
         }
 
-        [TestMethod]
+        [Fact]
         public void CreateCubies_WhenUsingDefaultColorConfiguration_ThenItReturnsCubiesInASolvedState()
         {
             //Setup
@@ -994,8 +993,8 @@ namespace RubiksCore.Test
             HashSet<Cubie> cubies = new HashSet<Cubie>(configurator.CreateCubies(3));
 
             //verification
-            Assert.AreEqual<int>(27, cubies.Count());
-            Assert.IsTrue(cubies.SetEquals(expectedCubies));
+            Assert.Equal<int>(27, cubies.Count());
+            Assert.True(cubies.SetEquals(expectedCubies));
         }
     }
 }

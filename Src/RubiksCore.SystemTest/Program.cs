@@ -14,7 +14,9 @@ namespace RubiksCore.SystemTest
         static StreamWriter streamWriter;
         static void Main(string[] args)
         {
-            using (streamWriter = new StreamWriter("rubiks.txt"))
+            string logFileName = "rubiks.txt";
+            FileStream loggingStream = new FileStream(logFileName, FileMode.OpenOrCreate);
+            using (streamWriter = new StreamWriter(loggingStream))
             {
                 //Load the cube
                 LoadCube(30);

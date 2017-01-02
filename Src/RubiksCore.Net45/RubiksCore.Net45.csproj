@@ -41,22 +41,52 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\RubiksCore\CubeCopier.cs" />
-    <Compile Include="..\RubiksCore\CubeFace.cs" />
-    <Compile Include="..\RubiksCore\CubeTurnedEvent.cs" />
-    <Compile Include="..\RubiksCore\Cubie.cs" />
-    <Compile Include="..\RubiksCore\Enumerations.cs" />
-    <Compile Include="..\RubiksCore\Extensions.cs" />
-    <Compile Include="..\RubiksCore\GenericEventArgs.cs" />
-    <Compile Include="..\RubiksCore\ICubieConfigurator.cs" />
-    <Compile Include="..\RubiksCore\INotationParser.cs" />
-    <Compile Include="..\RubiksCore\Position.cs" />
-    <Compile Include="..\RubiksCore\PositionMover.cs" />
+    <Compile Include="..\RubiksCore\CubeCopier.cs">
+      <Link>CubeCopier.cs</Link>
+    </Compile>
+    <Compile Include="..\RubiksCore\CubeFace.cs">
+      <Link>CubeFace.cs</Link>
+    </Compile>
+    <Compile Include="..\RubiksCore\CubeTurnedEvent.cs">
+      <Link>CubeTurnedEvent.cs</Link>
+    </Compile>
+    <Compile Include="..\RubiksCore\Cubie.cs">
+      <Link>Cubie.cs</Link>
+    </Compile>
+    <Compile Include="..\RubiksCore\Enumerations.cs">
+      <Link>Enumerations.cs</Link>
+    </Compile>
+    <Compile Include="..\RubiksCore\Extensions.cs">
+      <Link>Extensions.cs</Link>
+    </Compile>
+    <Compile Include="..\RubiksCore\GenericEventArgs.cs">
+      <Link>GenericEventArgs.cs</Link>
+    </Compile>
+    <Compile Include="..\RubiksCore\ICubieConfigurator.cs">
+      <Link>ICubieConfigurator.cs</Link>
+    </Compile>
+    <Compile Include="..\RubiksCore\INotationParser.cs">
+      <Link>INotationParser.cs</Link>
+    </Compile>
+    <Compile Include="..\RubiksCore\Position.cs">
+      <Link>Position.cs</Link>
+    </Compile>
+    <Compile Include="..\RubiksCore\PositionMover.cs">
+      <Link>PositionMover.cs</Link>
+    </Compile>
+    <Compile Include="..\RubiksCore\RubiksCube.cs">
+      <Link>RubiksCube.cs</Link>
+    </Compile>
+    <Compile Include="..\RubiksCore\SingmasterNotationParser.cs">
+      <Link>SingmasterNotationParser.cs</Link>
+    </Compile>
+    <Compile Include="..\RubiksCore\SolvedPuzzleCubieConfigurator.cs">
+      <Link>SolvedPuzzleCubieConfigurator.cs</Link>
+    </Compile>
+    <Compile Include="..\RubiksCore\Square.cs">
+      <Link>Square.cs</Link>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="..\RubiksCore\RubiksCube.cs" />
-    <Compile Include="..\RubiksCore\SingmasterNotationParser.cs" />
-    <Compile Include="..\RubiksCore\SolvedPuzzleCubieConfigurator.cs" />
-    <Compile Include="..\RubiksCore\Square.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

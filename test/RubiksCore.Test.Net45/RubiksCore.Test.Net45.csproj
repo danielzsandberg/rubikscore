@@ -54,11 +54,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="../RubiksCore.Test/CubeFaceTests.cs" />
-    <Compile Include="../RubiksCore.Test/CubieTests.cs" />
+    <Compile Include="..\RubiksCore.Test\CubeFaceTests.cs">
+      <Link>CubeFaceTests.cs</Link>
+    </Compile>
+    <Compile Include="..\RubiksCore.Test\CubieTests.cs">
+      <Link>CubieTests.cs</Link>
+    </Compile>
+    <Compile Include="..\RubiksCore.Test\RubiksCubeTests.cs">
+      <Link>RubiksCubeTests.cs</Link>
+    </Compile>
+    <Compile Include="..\RubiksCore.Test\SolvedPuzzleCubieConfiguratorTests.cs">
+      <Link>SolvedPuzzleCubieConfiguratorTests.cs</Link>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="../RubiksCore.Test/RubiksCubeTests.cs" />
-    <Compile Include="../RubiksCore.Test/SolvedPuzzleCubieConfiguratorTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\RubiksCore.Net45\RubiksCore.Net45.csproj">

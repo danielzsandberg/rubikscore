@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace RubiksCore
 {
-    internal class CubeFace
+    public class CubeFace
     {
         #region Instance Variables
 
@@ -20,7 +20,7 @@ namespace RubiksCore
 
         #region Properties
 
-        internal IEnumerable<Position> CubiePositions
+        public IEnumerable<Position> CubiePositions
         {
             get
             {
@@ -28,7 +28,7 @@ namespace RubiksCore
             }
         }
 
-        internal RubiksDirection FaceDirection
+        public RubiksDirection FaceDirection
         {
             get;
             private set;
@@ -38,7 +38,7 @@ namespace RubiksCore
 
         #region Constructors
 
-        internal CubeFace(RubiksDirection direction, int parentCubeSize = 3)
+        public CubeFace(RubiksDirection direction, int parentCubeSize = 3)
         {
             _parentCubeSize = parentCubeSize;
             FaceDirection = direction;

@@ -5,19 +5,19 @@
         public int X
         {
             get;
-            internal set;
+            set;
         }
         
         public int Y
         {
             get;
-            internal set;
+            set;
         }
 
         public int Z
         {
             get;
-            internal set;
+            set;
         }
 
         public Position(int x, int y, int z)

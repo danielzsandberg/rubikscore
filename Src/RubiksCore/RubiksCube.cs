@@ -246,7 +246,7 @@ namespace RubiksCore
             
         }
 
-        internal RubiksCube(INotationParser parser, ICubieConfigurator configurator, int cubeSize)
+        public RubiksCube(INotationParser parser, ICubieConfigurator configurator, int cubeSize)
         {
             _faces = new Dictionary<RubiksDirection, CubeFace>();
             _faces.Add(RubiksDirection.Front, new CubeFace(RubiksDirection.Front, cubeSize));

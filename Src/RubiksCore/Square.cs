@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RubiksCore
 {
-    struct Square
+    public struct Square
     {
         public Position PositionOne
         {
